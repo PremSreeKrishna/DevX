@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-09-23T12:21:17.173Z",
+  "featureId": 2072057114,
+  "featureTitle": "LLM Intent Interpretation for Natural-Language Questions; As a Data Governance Administrator, I want LLM-generated reporting queries constrained by approved PostgreSQL rules so that sensitive automotive data is protected during AI-assisted reporting; As an Automotive Reporting Analyst, I want query results returned through an interactive interface with status feedback so that I can review PostgreSQL data efficiently and trust the reporting outcome (+23 more)",
+  "slug": "secure-automotive-nlq-reporting",
+  "advisory": true,
+  "confidence": 0.45,
+  "ownerRepoType": "current-repo",
+  "impactedRepoTypes": [
+    "current-repo"
+  ],
+  "candidateAreas": [
+    "UI screens/components",
+    "API routes/services",
+    "Data model/persistence",
+    "Authentication/authorization",
+    "Background work/events",
+    "Tests"
+  ],
+  "filesToReadFirst": [
+    "specs/.devx/project-context.md",
+    "specs/.devx/current-state.md",
+    "specs/.devx/implementation-check.md",
+    "specs/.devx/change-maps/secure-automotive-nlq-reporting.md",
+    "specs/.devx/guidance/golden-repo-guidelines.md",
+    "specs/secure-automotive-nlq-reporting/specs.md",
+    "specs/secure-automotive-nlq-reporting/requirements.md",
+    "specs/secure-automotive-nlq-reporting/prompt.md"
+  ],
+  "existingCodeSearchHints": [
+    {
+      "area": "UI screens/components",
+      "action": "Search the discovered workspace for existing ui screens/components before creating new code."
+    },
+    {
+      "area": "API routes/services",
+      "action": "Search the discovered workspace for existing api routes/services before creating new code."
+    },
+    {
+      "area": "Data model/persistence",
+      "action": "Search the discovered workspace for existing data model/persistence before creating new code."
+    },
+    {
+      "area": "Authentication/authorization",
+      "action": "Search the discovered workspace for existing authentication/authorization before creating new code."
+    },
+    {
+      "area": "Background work/events",
+      "action": "Search the discovered workspace for existing background work/events before creating new code."
+    },
+    {
+      "area": "Tests",
+      "action": "Search the discovered workspace for existing tests before creating new code."
+    }
+  ],
+  "testsToInspect": [
+    "Existing unit tests near candidate implementation files",
+    "Existing integration/API tests for related routes or services",
+    "Existing UI/e2e tests for related screens or flows"
+  ],
+  "constraints": [
+    "Verify every suggested path in the actual IDE workspace before editing.",
+    "Prefer extending existing modules over creating parallel implementations.",
+    "Existing code patterns override generic guidance when they conflict.",
+    "Do not create a new repo or major folder structure unless the spec explicitly requires it."
+  ],
+  "routingRationale": [
+    "Use current workspace discovery output to confirm ownership before implementation."
+  ]
+}

@@ -1,0 +1,29 @@
+# Architecture — AI Reporting Platform
+
+> Auto-generated architecture overview. Update this file as the system evolves.
+
+## Feature Map
+
+### LLM Intent Interpretation for Natural-Language Questions; As a Data Governance Administrator, I want LLM-generated reporting queries constrained by approved PostgreSQL rules so that sensitive automotive data is protected during AI-assisted reporting; As an Automotive Reporting Analyst, I want query results returned through an interactive interface with status feedback so that I can review PostgreSQL data efficiently and trust the reporting outcome (+23 more)
+- 26 user stories
+- Stories: LLM Intent Interpretation for Natural-Language Questions, As a Data Governance Administrator, I want LLM-generated reporting queries constrained by approved PostgreSQL rules so that sensitive automotive data is protected during AI-assisted reporting, As an Automotive Reporting Analyst, I want query results returned through an interactive interface with status feedback so that I can review PostgreSQL data efficiently and trust the reporting outcome, As a Data Governance Manager, I want AI-generated PostgreSQL queries validated against access and compliance rules so that automotive reporting data remains secure and governed, As an Automotive Reporting Analyst, I want to ask natural-language questions about PostgreSQL reporting data so that I can obtain business insights without writing SQL, As a Reporting Analyst, I want to ask for automotive business data in natural language so that I can obtain insights without writing PostgreSQL queries, As a Data Access Administrator, I want natural-language queries validated against role and data policies so that sensitive automotive data is not exposed through generated SQL, As an Operations Manager, I want interactive reporting results and status visibility so that I can obtain automotive business insights efficiently and trust the reporting outcome, As an Automotive Operations Manager, I want validated natural-language queries to return interactive PostgreSQL results or status updates so that I can act on reporting requests quickly, As a Compliance Auditor, I want a complete audit trail for natural-language PostgreSQL interactions so that automotive reporting access can be reviewed and explained, As a Reporting Analyst, I want to submit natural-language requests for vehicle, warranty, service history, and dealer reporting so that I can obtain SQL-backed insights without writing SQL manually, As a Security Administrator, I want generated SQL for customer, vehicle, warranty, and supplier reporting to be validated against access and compliance policies so that unauthorized or unsafe queries are blocked before execution, As a Reporting Operations Manager, I want validated SQL requests to execute with status messaging, resource controls, and full audit logging so that automotive reporting remains reliable, traceable, and within service expectations, As a Reporting Analyst, I want the platform to generate SQL for approved reporting requests so that PostgreSQL database interaction uses a consistent query language, As a Data Security Administrator, I want generated SQL validated against access and compliance rules so that automotive reporting data is protected before database interaction occurs, As an Operations Manager, I want approved SQL execution to be traceable and performance-controlled so that reporting workflows remain auditable and responsive, As a Reporting Analyst, I want to view retrieved automotive reporting data in an interactive grid so that I can review results without leaving the reporting platform, As a Compliance Manager, I want sensitive automotive reporting results to be masked by role in the interactive interface so that customer, vehicle, and financial data stays protected, As a Reporting Analyst, I want the results interface to show processing status and support query refinement so that I can continue analysis when retrieved data is delayed or ambiguous, As a Reporting Analyst, I want to receive interactive results for an approved natural-language query so that I can analyze automotive reporting data without waiting on manual report creation, As a Reporting Analyst, I want to receive a processing status message when my natural-language query takes longer to complete so that I know the automotive report request is still being handled, As a Data Security Administrator, I want the platform to validate LLM-derived reporting queries against access and safety guardrails so that customer, vehicle, and OEM data is protected before execution, As a Compliance Auditor, I want the platform to trace each natural-language reporting request from prompt through execution outcome so that AI-generated reporting remains explainable and reviewable, As a Reporting Analyst, I want to run approved reporting queries against PostgreSQL so that I can retrieve automotive business data for analysis, As a Reporting Analyst, I want to retrieve requested automotive reporting data from PostgreSQL so that I can analyze current vehicle, dealer, warranty, and service information without manual extraction, As a Data Governance Administrator, I want PostgreSQL retrieval requests and outcomes to be fully audited and performance-controlled so that automotive reporting access remains explainable, compliant, and operationally resilient
+
+## Guidelines
+
+- Follow the specs in each feature folder for implementation details
+- Each feature should be independently deployable where possible
+- Shared logic should be extracted into common modules
+- Follow the project's established patterns and conventions
+
+
+## Data Models
+
+> Document key data models here as they are implemented.
+
+## API Contracts
+
+> Document API endpoints here as they are implemented.
+
+## Integration Points
+
+> Document external integrations and dependencies here.

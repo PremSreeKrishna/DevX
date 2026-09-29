@@ -1,0 +1,13 @@
+{
+  "trackerVersion": 1,
+  "updatedAt": "2026-09-23T12:21:17.170Z",
+  "tasks": {
+    "FEATURE-2072057114": {
+      "status": "PENDING",
+      "title": "LLM Intent Interpretation for Natural-Language Questions; As a Data Governance Administrator, I want LLM-generated reporting queries constrained by approved PostgreSQL rules so that sensitive automotive data is protected during AI-assisted reporting; As an Automotive Reporting Analyst, I want query results returned through an interactive interface with status feedback so that I can review PostgreSQL data efficiently and trust the reporting outcome (+23 more)",
+      "featureId": 2072057114,
+      "slug": "secure-automotive-nlq-reporting",
+      "updatedAt": "2026-09-23T12:21:17.170Z"
+    }
+  }
+}
