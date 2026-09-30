@@ -10,7 +10,7 @@
       "title": "LLM Intent Interpretation for Natural-Language Questions; As a Data Governance Administrator, I want LLM-generated reporting queries constrained by approved PostgreSQL rules so that sensitive automotive data is protected during AI-assisted reporting; As an Automotive Reporting Analyst, I want query results returned through an interactive interface with status feedback so that I can review PostgreSQL data efficiently and trust the reporting outcome (+23 more)",
       "slug": "secure-automotive-nlq-reporting",
       "state": "planned",
-      "status": "not-started",
+      "status": "in-progress",
       "openQuestions": [
         {
           "id": "oq-1",

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "runId": "20260929T092531Z",
+  "status": "completed",
+  "lastRunAt": "2026-09-29T09:28:01Z",
+  "workspaceMode": "single",
+  "packageManager": "npm",
+  "selectedAiTool": "claude",
+  "only": "",
+  "dryRun": 0,
+  "force": 0,
+  "skipValidation": 0,
+  "detected": {
+    "ui": { "stack": "none", "score": 0, "status": "missing" },
+    "backend": { "stack": "none", "score": 0, "status": "missing" },
+    "database": { "stack": "none", "score": 0, "status": "missing" }
+  },
+  "selected": {
+    "ui": "react",
+    "backend": "node",
+    "database": "postgres",
+    "reactPostCreate": "install-start"
+  },
+  "targets": {
+    "ui": "client",
+    "backend": "server"
+  },
+  "toolVersions": {
+    "node": "v24.18.1",
+    "npm": "11.16.0",
+    "pnpm": "missing",
+    "yarn": "",
+    "python3": "",
+    "go": "missing",
+    "dotnet": "10.0.112",
+    "php": "missing",
+    "composer": "missing",
+    "ruby": "missing",
+    "rails": "missing"
+  },
+  "markers": {
+    "nestedRepos": "",
+    "ci": "",
+    "environment": ""
+  },
+  "stepResults": " scaffold-ui:react=started scaffold-ui:react=succeeded scaffold-backend:node=started scaffold-backend:node=succeeded database:postgres=succeeded discovery=succeeded ai:claude=succeeded",
+  "needsUserDecision": "",
+  "logFile": "/c/ProjectClone/specs/.devx/logs/init-20260929T092531Z.log"
+}

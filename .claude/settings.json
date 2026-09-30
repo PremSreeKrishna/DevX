@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "devx-specs": {
+      "command": "node",
+      "args": ["specs/.devx/mcp/server.js"],
+      "cwd": "."
+    }
+  }
+}
