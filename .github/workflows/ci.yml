@@ -1,131 +1,26 @@
-trigger:
-- main
+name: CI
 
-pr:
-- main
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
 
-pool:
-  vmImage: ubuntu-latest
-
-variables:
-  nodeVersion: '20.x'
-  deployProduction: 'false'
-
-  # Configure these in Azure DevOps Library or pipeline variables.
-  azureServiceConnection: ''
-  backendAppName: ''
-  staticWebAppToken: ''
-
-stages:
-- stage: Build
-  displayName: Build and validate
-
-  jobs:
-  - job: BuildAndTest
-    displayName: Build Orion Reports
-
+jobs:
+  build_1:
+    runs-on: ubuntu-latest
     steps:
-    - task: NodeTool@0
-      displayName: Install Node.js
-      inputs:
-        versionSpec: '$(nodeVersion)'
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm run build --if-present
 
-    - script: npm ci
-      displayName: Install frontend dependencies
-      workingDirectory: client
+  test_2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm test
 
-    - script: npm run build
-      displayName: Build React frontend
-      workingDirectory: client
-
-    - script: npm run lint
-      displayName: Lint React frontend
-      workingDirectory: client
-
-    - script: npm ci
-      displayName: Install backend dependencies
-      workingDirectory: server
-
-    - script: npm test
-      displayName: Test Express backend
-      workingDirectory: server
-
-    - task: CopyFiles@2
-      displayName: Prepare frontend artifact
-      inputs:
-        SourceFolder: 'client/dist'
-        Contents: '**'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/frontend'
-
-    - task: CopyFiles@2
-      displayName: Prepare backend artifact
-      inputs:
-        SourceFolder: 'server'
-        Contents: |
-          **
-          !node_modules/**
-          !test/**
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/backend'
-
-    - task: ArchiveFiles@2
-      displayName: Package backend
-      inputs:
-        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/backend'
-        includeRootFolder: false
-        archiveType: zip
-        archiveFile: '$(Build.ArtifactStagingDirectory)/backend.zip'
-        replaceExistingArchive: true
-
-    - task: PublishPipelineArtifact@1
-      displayName: Publish frontend artifact
-      inputs:
-        targetPath: '$(Build.ArtifactStagingDirectory)/frontend'
-        artifact: frontend
-
-    - task: PublishPipelineArtifact@1
-      displayName: Publish backend artifact
-      inputs:
-        targetPath: '$(Build.ArtifactStagingDirectory)/backend.zip'
-        artifact: backend
-
-- stage: Deploy
-  displayName: Deploy to Azure
-  dependsOn: Build
-  condition: and(succeeded(), eq(variables['deployProduction'], 'true'))
-
-  jobs:
-  - deployment: DeployBackend
-    displayName: Deploy Express backend
-    environment: production
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - download: current
-            artifact: backend
-
-          - task: AzureWebApp@1
-            displayName: Deploy backend to Azure App Service
-            inputs:
-              azureSubscription: '$(azureServiceConnection)'
-              appType: webAppLinux
-              appName: '$(backendAppName)'
-              package: '$(Pipeline.Workspace)/backend/backend.zip'
-
-  - deployment: DeployFrontend
-    displayName: Deploy React frontend
-    environment: production
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - download: current
-            artifact: frontend
-
-          - task: AzureStaticWebApp@0
-            displayName: Deploy frontend to Azure Static Web Apps
-            inputs:
-              app_location: '$(Pipeline.Workspace)/frontend'
-              output_location: ''
-              skip_app_build: true
-              azure_static_web_apps_api_token: '$(staticWebAppToken)'
+  deploy_3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Run Deploy App"
